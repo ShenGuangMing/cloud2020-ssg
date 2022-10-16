@@ -1,0 +1,17 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: cloud-eureka7002-server
+
+eureka:
+  instance:
+    hostname: eureka7002.com
+  client:
+    # false表示不将自己注册到注册中心，true和false没有什么影响
+    register-with-eureka: false
+    # false表示自己端就是注册中心，职责就是维护服务实例，并不需要去搜索服务
+    fetch-registry: false
+    service-url:
+      # 设置Eureka Server交互的地址查询服务和注册服务都依赖这个地址
+      defaultZone: http://eureka7001.com:7001/eureka/

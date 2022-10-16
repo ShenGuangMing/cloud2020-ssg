@@ -1,0 +1,18 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: consul-provider-payment
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  # consul注册中心
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
